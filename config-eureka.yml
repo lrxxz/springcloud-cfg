@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 7001
+
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-euerka
+
+#eureka
+eureka:
+  instance:
+    hostname: server7001  #eureka的名称
+  client:
+    register-with-eureka: false   #表示是否向注册中心注册自己，false表示不，因为本身就是服务注册中心
+    fetch-registry: false   #为false，表示自己为注册中心，true的话，说明不是注册中心
+    service-url:     #监控页面
+      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/
