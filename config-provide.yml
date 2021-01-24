@@ -8,6 +8,9 @@ server:
 
 #mysql
 spring:
+  profiles: dev
+  application:
+    name: provide
   datasource:
     url: jdbc:mysql://localhost:3306/cloud?serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
@@ -20,11 +23,6 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/config.xml
 
-#eureka
-spring:
-  profiles: dev
-  application:
-    name: provide
 
 eureka:
   client:
